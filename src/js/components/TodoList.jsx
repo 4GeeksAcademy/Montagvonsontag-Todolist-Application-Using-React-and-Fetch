@@ -8,7 +8,7 @@ export const TodoList = () => {
 //create user 
     const createUser = async () => {
         try {
-            const response = await fetch('https://playground.4geeks.com/todo/users/Je_suis_Paco',{
+            const response = await fetch('https://playground.4geeks.com/todo/users/Montag',{
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ export const TodoList = () => {
 //get tasks
 const getUserTodos = async () => {
     try {
-        const response = await fetch('https://playground.4geeks.com/todo/users/Je_suis_Paco');
+        const response = await fetch('https://playground.4geeks.com/todo/users/Montag');
         const data = await response.json();
         setData(data);
     } catch (error) {
@@ -36,7 +36,7 @@ const getUserTodos = async () => {
 //add task  
 const createTask = async () => {
     try {
-        const response = await fetch('https://playground.4geeks.com/todo/todos/Je_suis_Paco',{
+        const response = await fetch('https://playground.4geeks.com/todo/todos/Montag',{
             method: "POST",    
             headers: {
                 'Content-Type': 'application/json'
@@ -63,8 +63,10 @@ const deleteTask = async (id) => {
     getUserTodos()
 }
 
+//run functions within useEffect
 useEffect(() => {
-    getUserTodos(); //run function
+    createUser();
+    getUserTodos(); 
   }, []);
 
 
